@@ -1,5 +1,7 @@
 # predupe
 
+[![CI](https://github.com/egrilmez/JasCan/actions/workflows/ci.yml/badge.svg)](https://github.com/egrilmez/JasCan/actions/workflows/ci.yml)
+
 **Find near-duplicate documents *before* you embed them.**
 
 `predupe` scans a folder of text, Markdown, reStructuredText, and HTML files and flags duplicates and near-duplicates so you don't waste embedding API calls — and don't pollute your vector store with redundant chunks that hurt retrieval quality. (PDF and DOCX extraction are on the roadmap.)
