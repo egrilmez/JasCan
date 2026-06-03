@@ -1,0 +1,39 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "predupe"
+version = "0.1.0"
+description = "Find near-duplicate documents before you embed them."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Bulent Egrilmez", email = "bulent.egrilmez@gmail.com" }]
+keywords = ["rag", "deduplication", "minhash", "lsh", "embeddings", "nlp"]
+dependencies = [
+    "datasketch>=1.6",
+]
+
+[project.optional-dependencies]
+semantic = [
+    "sentence-transformers>=2.2",
+    "hnswlib>=0.7",
+]
+dev = [
+    "pytest>=7",
+]
+
+[project.scripts]
+predupe = "predupe.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/egrilmez/JasCan"
+Issues = "https://github.com/egrilmez/JasCan/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/predupe"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
